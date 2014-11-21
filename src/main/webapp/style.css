@@ -1,0 +1,226 @@
+body{
+    width:700px;
+    margin: auto;
+    border:1px solid lightgray;
+    padding:20px;
+    box-shadow: 2px 2px 3px 1px lightgray;
+    border-radius: 0 0 50px 50px;
+}
+
+
+header {
+    width:700px;
+    background: white;
+    font-size: 35pt;
+    font-weight: bold;
+    color:#353535;
+    text-align: center;
+    font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L';
+}
+
+a {
+    text-decoration: none;
+    color:#4396AB
+}
+
+a:hover {
+    font-style: italic
+}  
+
+a:visited {
+    color:#4396AB
+}
+
+nav {
+    background-color: transparent;
+    width: 700px;
+    opacity:0.8;
+    height:20px;
+    margin: 15px 0 15px 0;
+    color:grey;
+    padding:1px;
+    border:1px solid #d8d8d8; 
+    border-radius: 15px;
+    font-size: 13pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#main {
+    width: 700px;
+} 
+
+footer {
+	padding-top:10px;
+    position:absolute;
+    bottom:0;
+    background:white;
+    height:35pt;
+    width:692px;
+    padding: 8px 0px 8px 8px;
+    border-top: 1pt solid black
+}
+
+
+#loginRegister {
+    text-align:center;
+        color:#353535
+}
+
+/* LOGIN FORM */
+
+#loginForm {
+   width:50%;
+   margin:auto;
+   height:80px;
+   padding:10px;
+   line-height: 30px;
+   box-shadow: 2px 2px 3px 1px lightgray
+}
+
+#logpassword, #lognickname {
+    float:left;
+    width:80px;
+    margin-right:2px;
+}
+
+
+/* REGISTRATION FORM */
+
+#registerForm {
+   width:50%;
+   margin:auto;
+   height:150px;
+   padding:10px;
+   line-height: 30px;
+   box-shadow: 2px 2px 3px 1px lightgray
+}
+
+#regemail, #regRepeatpassword, #regpassword, #regnickname {
+    float:left;
+    width:150px;
+    margin-right:2px;
+}
+
+#suggestionReg {
+margin:auto;
+width:300px;
+padding:5px;
+margin-top:10px;
+border:2px solid #2d2d2d;
+border-radius:20px;
+font-size:12pt;
+color:#5c5c5c;
+}
+
+
+
+/* BUTTONS REGISTER AND LOGIN */
+
+#loginButton, #registerButton {
+    color:#353535;
+    float:right;
+    background:white;
+    border:2px solid #F3F3F3;
+    border-radius:10px;
+}
+
+#loginButton:hover, #registerButton:hover {
+    float:right;
+    background:#6CB2C3;
+    color:white;
+    border:2px solid #F3F3F3;;
+    border-radius:10px;
+}
+
+/* TABLE GAME */
+
+table{
+	margin:auto;
+	width:40%;
+	box-shadow: 1px 1px 3px 1px lightgray;
+	border:1px solid #7c7c7c;
+    border-collapse: collapse;
+	
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+th, td {
+    padding:2px;
+    border: 1px solid lightgray;
+}
+
+#historyTable {
+	width:500px
+}
+
+button {
+	background:white;
+    border:2px solid #F3F3F3;
+    border-radius:10px;
+}
+
+button:hover {
+	background:#6CB2C3;
+    color:white;
+    border:2px solid #F3F3F3;
+    border-radius:10px;
+}
+
+#buttonTry {
+    background:white;
+    border:2px solid #F3F3F3;
+    border-radius:10px;
+    float:right
+}
+
+#buttonTry:hover {
+    background:#6CB2C3;
+    color:white;
+    border:2px solid #F3F3F3;
+    border-radius:10px;
+}
+
+#tryForm {
+    margin-top:10px;
+    margin-right:37%;
+    margin-bottom:25px
+}
+
+#newGame {
+	float:left;
+}
+
+#logout {
+	float:right;
+}
+
+#rank {
+	float:left;
+}
+
+#backToGame {
+	margin-top:10px;
+}
+
+#sequenceTry{
+    border:1px solid lightgray;
+    border-radius: 10px;
+    color:gray;
+    padding-left:3px;
+    float:right;
+}
+
+#display {
+font-family: Georgia;
+text-align: center;
+font-size: 18pt;
+font-style:italic;
+}
+
+/*LOADER*/
+.wait, .wait * { 
+	cursor: wait !important; 
+}
+

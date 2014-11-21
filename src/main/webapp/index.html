@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8" />
+<title>Mastermind</title>
+</head>
+
+<body>
+	<header>
+		<strong>M</strong><em>astermind</em>
+	</header>
+
+	<nav><button id="newGame">New Game</button> <button id="rank">Global Ranking</button> <span id="score"></span>  <button id="logout">Logout</button> <a style="float:right; margin:0 10px 0 10px" href="/Documentazione.pdf">Help</a></nav>
+	<section id="main">
+	
+	<p id='display'>&nbsp;</p>
+	
+		<div id="loginRegister">
+			<h3>Sign up / Log in</h3>
+			<form id='loginForm'>
+				<label id="lognickname">Nickname</label> <input type="text"
+					name="idLogNick" value="" id="idLogNick" /> <br> <label
+					id="logpassword">Password</label> <input type="password"
+					name="idLogPass" value="" id="idLogPass" /> <br> <input
+					type='submit' value='Login' id='loginButton' />
+			</form>
+
+			<form id='registerForm'>
+				<label id="regnickname">Nickname</label> <input type="text"
+					name="idRegNick" value="" id="idRegNick" /> <br> <label
+					id="regpassword">Password</label> <input type="password"
+					name="idRegPass" value="" id="idRegPass" /> <br> <label
+					id="regRepeatpassword">Repeat Password</label> <input
+					type="password" name="idRegPass" value="" id="idRepeatRegPass" /> <br>
+				<label id="regemail">Email</label> <input type="text"
+					name="idRegNick" value="" id="idRegEmail" /> <br> <input
+					type='submit' value='Register' id='registerButton' />
+			</form>
+			
+			<div id="suggestionReg">
+			<em>Password</em> and <em>Repeat Password</em> <strong>must</strong> match <br>
+			<em>Email</em> <strong>must</strong> be valid<br>
+			<em>All fields</em> cannot be empty<br>
+			<em>Password at least</em><strong> 8 chars</strong> long
+			</div>
+
+			<p style="font-size: 11pt" id="labelreg">
+				or <a href="#" id="goRegister">Sign up</a> if you don't have an
+				account!
+			</p>
+			<p style="font-size: 11pt" id="labellog">
+				back to <a href="#" id="goLogin">Login</a>
+			</p>
+		</div>
+
+		<div id="game">
+			<div id='triesDiv'></div>
+			<form id="tryForm">
+				<input type="text" name="sequenceTry" value="" id="sequenceTry" maxlength="4"/> <input
+					type="submit" value="Try!" id="buttonTry" />
+			</form>
+		</div>
+		
+		<div style="height:200px;overflow-y: auto;" id ="rankScroll">
+		<div id="rankDiv"></div>
+		</div>
+		<div style="height:200px;overflow-y: auto;" id ="historyScroll">
+		<div id="historyDiv"></div>
+		</div>
+		
+		<button id="backToGame">Back!</button>
+		<button id="backToRank">Back!</button>
+	</section>
+
+
+	<footer>
+		<strong>Autori: </strong> Pisano Stefano <em>716590</em> e Poretti
+		Mirco <em>716627</em>
+		<div style="float: right">
+			<strong>Appello:</strong> Novembre 2014
+		</div>
+	</footer>
+
+	<script id='tries-template' type="application/x-tmpl-mustache">
+	<table id="tries-tab">
+		<tr>
+			<th colspan='2'>Tries</th>
+			<th>Result</th>
+		</tr>
+  	  {{#tries}}
+		<tr>
+    		<td>{{SequenceNumber}}</td>
+			<td>{{InputNumbers}}</td>
+			<td>{{Result}}</td>
+		</tr>
+		{{/tries}}
+	</table>
+    </script>
+    
+    <script id="history_template" type="application/x-tmpl-mustache">
+		<table id="historyTable">
+			<tr>
+				<th>Started</th>
+				<th>Finished</th>
+				<th>Tries</th>
+				<th>Status</th>
+			</tr>
+			{{#history}}
+			<tr>
+				<td id="started" width="40%"> {{ started }} </td>
+				<td id="finished" width="40%"> {{finished}} </td>
+				<td id="tries" width="5%"> {{ tries }} </td>
+				<td id="status" width="15%"> {{ status }} </td>
+			</tr>
+			{{/history}}
+		</table>
+		</script>
+    
+    <script id="global_template" type="application/x-tmpl-mustache">
+		<table id="globalRank" >
+			<tr>
+				<th>Position</th>
+				<th>Username</th>
+				<th>Score</th>
+				<th>Games</th>
+			</tr>
+			{{#players}}
+			<tr>
+				<td id="pos">{{ pos }}</td>
+				<td id="user"><a href='javascript:on_player_history("{{id}}")'> {{id}} </a></td>
+				<td id="score">{{ avg }}</td>
+				<td id="ngames">{{ games }}</td>
+			</tr>
+			{{/players}}
+		</table>
+	</script>
+	
+	<script src='scripts/lib/mustache.js'></script>
+	<script src='scripts/lib/jquery-1.10.2.min.js'></script>
+	<script src='scripts/mastermind.js'></script>
+	<script src='scripts/game.js'></script>
+	<script src='scripts/game_results_view.js'></script>
+
+</body>
+</html>
+
